@@ -1,2 +1,2 @@
-pub mod matrix;
 pub mod artihemetic;
+pub mod matrix;

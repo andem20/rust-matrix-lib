@@ -2,7 +2,7 @@
 Library contianing basic matrix operations
 
 ## TODO
-- [ ] Datastructure
-- [ ] Addition
-- [ ] Subtration
+- [X] Datastructure
+- [X] Addition
+- [X] Subtration
 - [ ] Multiplication
