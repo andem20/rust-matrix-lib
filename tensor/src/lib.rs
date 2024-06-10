@@ -1,2 +1,2 @@
 pub mod arithmetic;
-pub mod tensor;
+pub mod tensor_mod;

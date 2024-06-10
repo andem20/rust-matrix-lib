@@ -5,8 +5,8 @@ pub struct Tensor<T, const S: usize, const D: usize>
 where
     T: std::clone::Clone + std::default::Default + std::fmt::Debug,
 {
-    values: [T; S],
-    shape: [usize; D],
+    pub values: [T; S],
+    pub shape: [usize; D],
 }
 
 impl<T, const S: usize, const D: usize> Tensor<T, S, D>
@@ -92,4 +92,28 @@ where
     pub fn shape(&self) -> &[usize] {
         &self.shape
     }
+
+    pub fn dot<const L: usize, const Z: usize, const A: usize, const B: usize>(
+        &self,
+        tensor: &Tensor<T, L, Z>,
+    ) -> Tensor<T, A, B> {
+        return Tensor::<T, A, B>::new([0; B]);
+    }
+}
+
+#[macro_export]
+macro_rules! product {
+    ($h:expr) => ($h);
+    ($h:expr, $($t:expr),*) =>
+        ($h * $crate::product!($($t),*));
+}
+
+#[macro_export]
+macro_rules! tensor {
+    ($t:ty, $($x:expr),+) => {
+        Tensor {
+            values: [<$t>::default(); $crate::product!($($x),*)],
+            shape: [$($x),+]
+        }
+    };
 }

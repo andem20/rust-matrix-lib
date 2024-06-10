@@ -1,0 +1,1 @@
+/home/anders/Documents/projects/rust/matrix-library/tensor/target/debug/libtensor.rlib: /home/anders/Documents/projects/rust/matrix-library/tensor/src/arithmetic.rs /home/anders/Documents/projects/rust/matrix-library/tensor/src/lib.rs /home/anders/Documents/projects/rust/matrix-library/tensor/src/tensor_mod.rs

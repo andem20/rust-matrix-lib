@@ -1,6 +1,6 @@
 #[cfg(test)]
 mod arithmetic_tests {
-    use tensor::tensor::Tensor;
+    use tensor::tensor_mod::Tensor;
 
     #[test]
     fn addition() {

@@ -1,7 +1,7 @@
-use tensor::tensor::Tensor;
+use tensor::{tensor, tensor_mod::Tensor};
 
 fn main() {
-    let mut tensor = Tensor::<f32, 24, 3>::new([4, 3, 2]);
+    let mut tensor = tensor!(f32, 4, 3, 2);
     let values = (0..24).map(|x| x as f32).collect::<Vec<f32>>();
 
     tensor.set_values(values.try_into().unwrap());
@@ -12,11 +12,12 @@ fn main() {
     // println!("{:?}", tensor.get(&[2..3, 0..2]));
     println!("{:?}", tensor + tensor);
 
-    let values = (0..24).map(|x| x as f32).collect::<Vec<f32>>();
-    let tensor_1 = Tensor::<f32, 24, 3>::with_values(values.try_into().unwrap(), [4, 3, 2]);
+    // let values = (0..24).map(|x| x as f32).collect::<Vec<f32>>();
+    // let tensor_1 = Tensor::<f32, 24, 3>::with_values(values.try_into().unwrap(), [4, 3, 2]);
 
-    let values = (0..12).map(|x| -x as f32).collect::<Vec<f32>>();
-    let tensor_2 = Tensor::<f32, 12, 3>::with_values(values.try_into().unwrap(), [4, 3, 1]);
+    // let values: Vec<f32> = (0..12).map(|x| -x as f32).collect::<Vec<f32>>();
+    // let tensor_2 = Tensor::<f32, 12, 3>::with_values(values.try_into().unwrap(), [4, 3, 1]);
 
-    println!("{:?}", tensor_1 + tensor_2);
+    // println!("{:?}", tensor_1 + tensor_2);
+    // let result = &tensor.dot::<24, 3, 12, 3>(&tensor);
 }

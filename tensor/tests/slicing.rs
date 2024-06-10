@@ -1,6 +1,6 @@
 #[cfg(test)]
 mod tests {
-    use tensor::tensor::Tensor;
+    use tensor::tensor_mod::Tensor;
 
     fn create_3d_tensor() -> Tensor<f32, 24, 3> {
         let mut tensor = Tensor::<f32, 24, 3>::new([4, 3, 2]);

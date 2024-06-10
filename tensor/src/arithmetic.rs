@@ -1,6 +1,6 @@
 use std::ops::{Add, Sub};
 
-use crate::tensor::Tensor;
+use crate::tensor_mod::Tensor;
 
 impl<T, const S: usize, const D: usize, const L: usize, const Z: usize> Add<Tensor<T, L, Z>>
     for Tensor<T, S, D>
